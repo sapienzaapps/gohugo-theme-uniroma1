@@ -1,0 +1,15 @@
+name: "Uniroma1"
+license: "MIT"
+licenselink: "https://github.com/SapienzaApps/gohugo-theme-uniroma1/blob/master/LICENSE"
+description: "A Hugo template using standard Sapienza University of Rome (uniroma1) white template"
+tags: []
+features: []
+min_version: "0.41"
+
+author:
+  name: "SapienzaApps"
+  homepage: "https://www.sapienzaapps.it"
+
+original:
+  name: "Uniroma1"
+  homepage: "https://www.uniroma1.it/it/pagina/siti-web-di-ateneo-e-grafica-digitale"

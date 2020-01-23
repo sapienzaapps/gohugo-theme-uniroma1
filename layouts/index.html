@@ -1,0 +1,16 @@
+{{ define "main" }}
+<div id="content">
+	<table id="content_table">
+		<tr>
+			<td class="content_cell">
+				<article>
+					{{ range .Params.pagemenu }}
+						{{- partial "index_item.html" . -}}
+					{{ end }}
+					{{ .Content }}
+				</article>
+			</td>
+		</tr>
+	</table>
+</div>
+{{ end }}

@@ -1,0 +1,24 @@
+{{ $currentPage := . }}
+
+{{ range .Page.Params.pagemenu }}
+	{{ if .items }}
+		<h1>{{ .name }}</h1>
+		<ul>
+			{{ range .items }}
+				{{ if strings.HasSuffix .link "pdf" }}
+					<li class="li-no-icon"><img src="/images/pdf-icon.png" /> <a href="{{ .link }}">{{ .name }}</a></li></li>
+				{{ else }}
+					<li><a href="{{ .link }}">{{ .name }}</a></li>
+				{{ end }}
+			{{ end }}
+		</ul>
+	{{ else if .text }}
+		<h1>{{ .name }}</h1>
+		<div>
+			{{ .text | markdownify }}
+		</div>
+	{{ else }}
+		<h1>{{ .name }}</h1>
+		<img onclick="location.href='{{ .link }}'" src="{{ .image }}" />
+	{{ end }}
+{{ end }}

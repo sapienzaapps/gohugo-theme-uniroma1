@@ -1,0 +1,12 @@
+<div class="homepage_menu">
+	<h2>{{ .name }}</h2>
+	<ul>
+	{{ range .items }}
+		<li>
+			<a href="{{ .link }}" title="{{ .name }}">
+				{{- .name -}}
+			</a>
+		</li>
+	{{ end }}
+	</ul>
+</div>

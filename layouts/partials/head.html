@@ -1,0 +1,14 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="{{ .Description }}" />
+<link rel="canonical" href="{{ .Permalink }}" />
+<meta name="keywords" content="{{ .Keywords }}" />
+{{ if eq .Title "" }}
+<title>{{ .Site.Title }}</title>
+{{ else }}
+<title>{{ .Title }}</title>
+{{ end }}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800">
+<link type="text/css" rel="stylesheet" href="/css/main.css" />

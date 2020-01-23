@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div id="content">
+	<table id="content_table">
+		<tr>
+			<td class="leftmenu" style="width: 195px;">{{- partial "left.html" . -}}</td>
+			<td class="content_cell">
+				<article>
+					<h1 class="pagetitle">{{ .Title }}</h1>
+					{{ .Content }}
+				</article>
+			</td>
+			{{ if .Page.Params.pagemenu }}
+			<td id="content_table_right">
+				{{- partial "right.html" . -}}
+			</td>
+			{{ end }}
+		</tr>
+	</table>
+</div>
+{{ end }}

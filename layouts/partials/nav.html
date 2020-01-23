@@ -1,0 +1,19 @@
+{{ $currentPage := . }}
+<ul>
+{{ range .Site.Menus.main }}
+	{{ $isCurrentSection := false }}
+	{{ if eq .Page.Section $currentPage.Section }}
+		{{ $isCurrentSection = true }}
+	{{ end }}
+	{{ if eq $currentPage.Page.Section .Page.Params.section_override }}
+		{{ $isCurrentSection = true }}
+	{{ end }}
+
+	<li class="{{ if $isCurrentSection }}sectionactive{{ end }}">
+		<a href="{{ .URL }}" title="{{ .Title }}">
+			{{- .Name -}}
+		</a>
+	</li>
+{{ end }}
+</ul>
+<div style="clear: both;"></div>
