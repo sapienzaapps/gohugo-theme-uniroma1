@@ -1,8 +1,8 @@
 <header>
-	<img src="/images/logo_sapienza.png" alt="Logo Sapienza" />
+	<img src="/images/logo_sapienza.png" alt="Logo Sapienza" id="logosapienza" />
 	<a href="/">{{ .Site.Title }}</a>
 
 	{{ if isset .Site.Params "logo2" }}
-	<img src="{{ .Site.Params.logo2 }}" alt="{{ .Site.Title }}" style="position: absolute; top: 0; right: 0; z-index: 100;" />
+	<img src="{{ .Site.Params.logo2 }}" alt="{{ .Site.Title }}" id="sitelogo" />
 	{{ end }}
 </header>

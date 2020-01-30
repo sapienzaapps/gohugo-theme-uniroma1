@@ -208,3 +208,18 @@ a:hover {
 .homepage_menu h2 {
 	text-transform: uppercase;
 }
+
+#sitelogo {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 100;
+}
+
+#content .leftmenu {
+	width: 195px;
+}
+
+nav .hamburgerlb, #hamburger {
+	display: none;
+}

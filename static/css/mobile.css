@@ -1,0 +1,79 @@
+@media screen and (max-width: 1170px) {
+	#content, header, nav, #footer, #footer_content {
+		width: 100%;
+	}
+
+	header {
+		padding: 15px;
+		margin: 0;
+	}
+
+	header a {
+		padding-top: 10px;
+		display: block;
+	}
+
+	#logosapienza {
+		margin: 0;
+	}
+
+	#content .leftmenu {
+		width: 100%;
+		float: left;
+	}
+
+	#content .content_cell {
+		margin-top: 10px;
+		float: left;
+	}
+
+	#content_table_right {
+		float: left;
+		width: 100%;
+	}
+
+	#content .homepage_menu {
+		display: none;
+	}
+
+	#content img {
+		max-width: 100%;
+	}
+
+	#sitelogo {
+		/* position: initial;
+		float: right; */
+		display: none;
+	}
+
+	nav > ul > li {
+		float: initial;
+	}
+
+
+	/* HAMBURGER MENU */
+	nav .hamburgerlb {
+		display: inline-block;
+		color: #822433;
+		background-color: #fff;
+		font-style: normal;
+		font-size: 1.2em;
+		padding: 10px;
+		border: 1px #005866 solid;
+		position: absolute;
+		top: -60px;
+		right: 10px;
+	}
+
+	nav ul {
+	  display: none;
+	}
+
+	nav input:checked ~ ul {
+	  display: block;
+	}
+
+	#hamburger {
+		display: none;
+	}
+}
