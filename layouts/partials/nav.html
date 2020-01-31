@@ -5,12 +5,14 @@
 <ul>
 {{ range .Site.Menus.main }}
 	{{ $isCurrentSection := false }}
-	{{ if eq .Page.Section $currentPage.Section }}
-		{{ $isCurrentSection = true }}
-	{{ end }}
+	{{ if ne .Page nil }}
+		{{ if eq .Page.Section $currentPage.Section }}
+			{{ $isCurrentSection = true }}
+		{{ end }}
 
-	{{ if and (eq .Page.File.Path .Page.Site.Params.home_section_page) (eq $currentPage.Section "") }}
-		{{ $isCurrentSection = true }}
+		{{ if and (eq .Page.File.Path .Page.Site.Params.home_section_page) (eq $currentPage.Section "") }}
+			{{ $isCurrentSection = true }}
+		{{ end }}
 	{{ end }}
 
 	<li class="{{ if $isCurrentSection }}sectionactive{{ end }}">

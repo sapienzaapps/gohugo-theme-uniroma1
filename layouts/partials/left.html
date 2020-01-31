@@ -1,7 +1,9 @@
 {{ $currentPage := . }}
 
 {{ range .Site.Menus.main }}
-	{{ .Page.Scratch.Set "currentPage" $currentPage }}
-	{{ .Page.Scratch.Set "parentMenuEntry" . }}
-	{{- partial "left_item.html" . -}}
+	{{ if ne .Page nil }}
+		{{ .Page.Scratch.Set "currentPage" $currentPage }}
+		{{ .Page.Scratch.Set "parentMenuEntry" . }}
+		{{- partial "left_item.html" . -}}
+	{{ end }}
 {{ end }}
