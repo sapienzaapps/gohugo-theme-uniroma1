@@ -2,6 +2,22 @@
 <div id="content">
 	<table id="content_table">
 		<tr>
+			{{ if isset .Site.Params "home_section_page" }}
+				{{ with .GetPage .Site.Params.home_section_page }}
+					<td class="leftmenu">{{- partial "left.html" . -}}</td>
+					<td class="content_cell">
+						<article>
+							<h1 class="pagetitle">{{ .Title }}</h1>
+							{{ .Content }}
+						</article>
+					</td>
+					{{ if .Page.Params.pagemenu }}
+					<td id="content_table_right">
+						{{- partial "right.html" . -}}
+					</td>
+					{{ end }}
+				{{ end }}
+			{{ else }}
 			<td class="content_cell">
 				<article>
 					{{ range .Params.pagemenu }}
@@ -10,6 +26,7 @@
 					{{ .Content }}
 				</article>
 			</td>
+			{{ end }}
 		</tr>
 	</table>
 </div>

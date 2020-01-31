@@ -8,7 +8,8 @@
 	{{ if eq .Page.Section $currentPage.Section }}
 		{{ $isCurrentSection = true }}
 	{{ end }}
-	{{ if eq $currentPage.Page.Section .Page.Params.section_override }}
+
+	{{ if and (eq .Page.File.Path .Page.Site.Params.home_section_page) (eq $currentPage.Section "") }}
 		{{ $isCurrentSection = true }}
 	{{ end }}
 
