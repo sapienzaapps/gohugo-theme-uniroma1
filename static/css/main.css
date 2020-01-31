@@ -223,3 +223,24 @@ a:hover {
 nav .hamburgerlb, #hamburger {
 	display: none;
 }
+
+nav .breadcrumbs {
+	padding: 10px 0;
+	color: #CCCCCC;
+	font-size: 12px;
+}
+
+nav .breadcrumbs a, nav .breadcrumbs a:link, nav .breadcrumbs a:visited,
+nav .breadcrumbs a:active, nav .breadcrumbs a:hover {
+	padding: 0 5px;
+	color: black;
+}
+
+nav .breadcrumbs a:first-child {
+	padding-left: 0;
+}
+
+nav .breadcrumbs b {
+	padding: 0 5px;
+	color: #660000;
+}

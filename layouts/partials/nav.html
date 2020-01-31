@@ -13,13 +13,19 @@
 		{{ if and (eq .Page.File.Path .Page.Site.Params.home_section_page) (eq $currentPage.Section "") }}
 			{{ $isCurrentSection = true }}
 		{{ end }}
-	{{ end }}
 
-	<li class="{{ if $isCurrentSection }}sectionactive{{ end }}">
-		<a href="{{ .URL }}" title="{{ .Title }}">
-			{{- .Name -}}
-		</a>
-	</li>
+		<li class="{{ if $isCurrentSection }}sectionactive{{ end }}">
+			<a href="{{ .URL }}" title="{{ .Title }}">
+				{{- .Name -}}
+			</a>
+		</li>
+	{{ end }}
 {{ end }}
 </ul>
 <div style="clear: both;"></div>
+
+{{ if ne .Parent nil }}
+<div class="breadcrumbs">
+	{{- partial "breadcrumbs.html" .Parent -}} / <b>{{ .Title }}</b>
+</div>
+{{ end }}
