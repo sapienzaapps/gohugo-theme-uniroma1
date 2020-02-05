@@ -244,3 +244,7 @@ nav .breadcrumbs b {
 	padding: 0 5px;
 	color: #660000;
 }
+
+#content img {
+	max-width: 100%;
+}
