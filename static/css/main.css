@@ -248,3 +248,7 @@ nav .breadcrumbs b {
 #content img {
 	max-width: 100%;
 }
+
+#content li {
+	padding-bottom: 5px;
+}
