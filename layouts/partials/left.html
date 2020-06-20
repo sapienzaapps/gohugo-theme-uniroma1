@@ -4,8 +4,6 @@
 	{{ if and (ne .Page nil) (eq .Page.Section $currentPage.Section) }}
 		{{ .Page.Scratch.Set "currentPage" $currentPage }}
 		{{ .Page.Scratch.Set "nested" 0 }}
-		<!-- { { .Page.Scratch.Set "parentMenuEntry" . }}
-		{ { -  partial "left_item.html" . -}} -->
 
 		<h2>{{ .Page.Name }}</h2>
 		<ul>
