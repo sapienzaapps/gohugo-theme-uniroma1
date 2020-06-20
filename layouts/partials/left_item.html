@@ -1,37 +1,13 @@
 {{ $currentPage := .Page.Scratch.Get "currentPage" }}
-{{ $parentMenuEntry := .Page.Scratch.Get "parentMenuEntry" }}
-{{ $newParentMenuEntry := . }}
+{{ $nested := .Page.Scratch.Get "nested" }}
+{{ $newNested := add (int $nested) 1 }}
 
-{{ if .HasChildren }}
-	{{ if eq .Page $currentPage }}
-		<h2>{{ .Name }}</h2>
-		<ul>
-		{{ range .Children }}
-			<li>
-				<a href="{{ .URL }}" title="{{ .Title }}">
-					{{- .Name -}}
-				</a>
-			</li>
-		{{ end }}
-		</ul>
-	{{ else }}
-		{{ range .Children }}
-			{{ .Page.Scratch.Set "currentPage" $currentPage }}
-			{{ .Page.Scratch.Set "parentMenuEntry" $newParentMenuEntry }}
-			{{- partial "left_item.html" . -}}
-		{{ end }}
-	{{ end }}
-{{ else if and (eq .Page $currentPage) (ne .Page.Parent.Name "") }}
-<h2>{{ .Page.Parent.Name }}</h2>
-<ul>
-{{ range $parentMenuEntry.Children }}
-	<li>
-		<a href="{{ .URL }}" title="{{ .Title }}" class="{{ if $currentPage.IsMenuCurrent "main" . }}menuactive{{ end }}">
-			{{- .Name -}}
+{{ range .Children }}
+	<li style="padding-left: {{ mul $nested 20 }}px;" class="{{ if $currentPage.IsMenuCurrent "main" . }}menuactive{{ end }}">
+		<a href="{{ .URL }}" title="{{ .Title }}">
+			{{ if gt $nested 0 }}-{{ end }} {{ .Name }}
 		</a>
+		{{ .Page.Scratch.Set "nested" $newNested }}
+		{{ partial "left_item.html" . }}
 	</li>
-{{ end }}
-</ul>
-{{ else if eq .Page $currentPage }}
-<h2>{{ $currentPage.Name }}</h2>
 {{ end }}

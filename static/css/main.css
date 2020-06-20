@@ -90,6 +90,14 @@ nav .sectionactive {
 	padding-bottom: 50px;
 }
 
+#content li {
+	padding-bottom: 5px;
+}
+
+#content_table td.leftmenu ul li {
+	padding-bottom: 0;
+}
+
 #content_table {
 	width: 100%;
 }
@@ -247,8 +255,4 @@ nav .breadcrumbs b {
 
 #content img {
 	max-width: 100%;
-}
-
-#content li {
-	padding-bottom: 5px;
 }
