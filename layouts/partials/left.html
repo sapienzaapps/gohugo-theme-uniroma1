@@ -5,7 +5,7 @@
 		{{ .Page.Scratch.Set "currentPage" $currentPage }}
 		{{ .Page.Scratch.Set "nested" 0 }}
 
-		<h2>{{ .Page.Name }}</h2>
+		<h2 onclick="location.href='{{ .URL }}'" style="cursor: pointer;">{{ .Page.Name }}</h2>
 		<ul>
 			{{ partial "left_item.html" . }}
 		</ul>

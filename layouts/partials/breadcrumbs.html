@@ -2,5 +2,5 @@
 {{- partial "breadcrumbs.html" .Parent -}} /
 <a href="{{ .URL }}">{{ .Title }}</a>
 {{ else }}
-<a href="{{ .Site.BaseURL }}">Home</a>
+<a href="{{ .URL }}">Home</a>
 {{ end }}
