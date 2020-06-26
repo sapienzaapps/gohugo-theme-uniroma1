@@ -1,0 +1,14 @@
+/*
+{{ $color := .Site.Params.basecolor | default "#822433" }}
+{{ $red := int (printf "0x%s" (substr $color 1 2)) }}
+{{ $green := int (printf "0x%s" (substr $color 3 2)) }}
+{{ $blue := int (printf "0x%s" (substr $color 5 2)) }}
+*/
+
+:root {
+	--main-color-red: {{ $red }};
+	--main-color-green: {{ $green }};
+	--main-color-blue: {{ $blue }};
+	--main-color: rgb(var(--main-color-red), var(--main-color-green), var(--main-color-blue));
+	--main-color-light: rgb(calc(var(--main-color-red) + 10), calc(var(--main-color-green) + 38), calc(var(--main-color-blue) + 13));
+}

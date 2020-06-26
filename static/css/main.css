@@ -29,7 +29,7 @@ header {
 }
 
 header a, header a:hover, header a:link, header a:active, header a:visited {
-	color: #005866;
+	color: var(--main-color);
 	font-size: 24px;
 	font-weight: 600;
 }
@@ -47,7 +47,7 @@ nav {
 }
 
 nav > ul {
-	background-color: #005866;
+	background-color: var(--main-color);
 	width: 100%;
 	color: white;
 	float: left;
@@ -69,7 +69,7 @@ nav > ul > li > a {
 }
 
 nav > ul > li.active > a, nav > ul > li > a:hover {
-	background-color: #40828c;
+	background-color: var(--main-color-light);
 }
 
 nav a, nav a:link, nav a:active, nav a:visited {
@@ -78,7 +78,7 @@ nav a, nav a:link, nav a:active, nav a:visited {
 }
 
 nav .sectionactive {
-	background-color: #40828c;
+	background-color: var(--main-color-light);
 }
 
 #content {
@@ -146,7 +146,7 @@ nav .sectionactive {
 }
 
 #content_table_right h1, #content_table td.leftmenu h2, .homepage_menu h2 {
-	background-color: #005866;
+	background-color: var(--main-color);
 	font-size: 14px;
 	line-height: 20px;
 	font-weight: 300;
@@ -169,7 +169,7 @@ nav .sectionactive {
 #footer {
 	position: absolute;
 	bottom: 0;
-	background-color: #005866;
+	background-color: var(--main-color);
 	width: 100%;
 	height: 39px;
 	margin-top: 20px;

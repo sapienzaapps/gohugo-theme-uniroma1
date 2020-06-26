@@ -10,6 +10,8 @@
 {{ else }}
 <title>{{ .Title }}</title>
 {{ end }}
+{{ $stylevariables := resources.Get "css/variables.css" | resources.ExecuteAsTemplate "css/variables.css" . }}
+<link type="text/css" rel="stylesheet" href="{{ $stylevariables.RelPermalink }}" />
 <link type="text/css" rel="stylesheet" href="/css/open_sans/open_sans.css" />
 <link type="text/css" rel="stylesheet" href="/css/main.css" />
 <link type="text/css" rel="stylesheet" href="/css/mobile.css" />
