@@ -1,6 +1,6 @@
 {{ if ne .Parent nil }}
 {{- partial "breadcrumbs.html" .Parent -}} /
-<a href="{{ .URL }}">{{ .Title }}</a>
+<a href="{{ .RelPermalink }}">{{ .Title }}</a>
 {{ else }}
-<a href="{{ .URL }}">Home</a>
+<a href="{{ .RelPermalink }}">Home</a>
 {{ end }}
