@@ -2,15 +2,18 @@
 <input type="checkbox" id="hamburger"/>
 
 {{ $currentPage := . }}
+{{ $indexPage := (index .Site.Sections 0) }}
+
 <ul>
 {{ range .Site.Menus.main }}
 	{{ $isCurrentSection := false }}
-	{{ if ne .Page nil }}
+
+	{{ if and (ne .Page nil) (gt .Weight -1) }}
 		{{ if eq .Page.Section $currentPage.Section }}
 			{{ $isCurrentSection = true }}
 		{{ end }}
 
-		{{ if and (eq .Page.File.Path .Page.Site.Params.home_section_page) (eq $currentPage.Section "") }}
+		{{ if and (eq .Page.File.Path $indexPage.File.Path) (eq $currentPage.Section "") }}
 			{{ $isCurrentSection = true }}
 		{{ end }}
 
@@ -24,7 +27,8 @@
 </ul>
 <div style="clear: both;"></div>
 
-{{ if ne .Parent nil }}
+
+{{ if and (ne .Page.File.Path $indexPage.File.Path) (ne .Parent nil) }}
 <div class="breadcrumbs">
 	{{- partial "breadcrumbs.html" .Parent -}} / <b>{{ .Title }}</b>
 </div>

@@ -1,9 +1,9 @@
 
-{{ if .Page.Params.highlights }}
+{{ if .Page.Params.services }}
 <div class="homepage_menu">
-	<h2>In evidenza</h2>
+	<h2>Servizi</h2>
 	<ul>
-	{{ range .Page.Params.highlights }}
+	{{ range .Page.Params.services }}
 		<li>
 			<a href="{{ .link }}" title="{{ .name }}">
 				{{- .name -}}
@@ -14,11 +14,11 @@
 </div>
 {{ end }}
 
-{{ if .Page.Params.services }}
+{{ if .Page.Params.highlights }}
 <div class="homepage_menu">
-	<h2>Servizi</h2>
+	<h2>In evidenza</h2>
 	<ul>
-	{{ range .Page.Params.services }}
+	{{ range .Page.Params.highlights }}
 		<li>
 			<a href="{{ .link }}" title="{{ .name }}">
 				{{- .name -}}

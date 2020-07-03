@@ -1,10 +1,14 @@
 {{ define "main" }}
 
-{{ if isset .Site.Params "home_section_page" }}
+{{ $indexPage := (index .Site.Sections 0) }}
+
+{{ if eq .Page.Params.layout "home" }}
+{{- partial "index_home.html" $indexPage -}}
+{{ else }}
 <div id="content">
 	<table id="content_table">
 		<tr>
-			{{ with .GetPage .Site.Params.home_section_page }}
+			{{ with $indexPage }}
 				<td class="leftmenu">{{- partial "left.html" . -}}</td>
 				<td class="content_cell">
 					<article>
@@ -21,8 +25,6 @@
 		</tr>
 	</table>
 </div>
-{{ else }}
-	{{- partial "index_home.html" . -}}
 {{ end }}
 
 {{ end }}
