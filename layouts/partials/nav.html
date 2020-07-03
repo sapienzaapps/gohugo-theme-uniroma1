@@ -18,7 +18,7 @@
 		{{ end }}
 
 		<li class="{{ if $isCurrentSection }}sectionactive{{ end }}">
-			<a href="{{ .URL }}" title="{{ .Title }}">
+			<a href="{{ .RelPermalink }}" title="{{ .Title }}">
 				{{- .Name -}}
 			</a>
 		</li>
