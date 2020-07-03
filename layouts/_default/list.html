@@ -8,6 +8,11 @@
 					<h1 class="pagetitle">{{ .Title }}</h1>
 					{{ .Content }}
 				</article>
+				<ul>
+				{{ range .Paginator.Pages }}
+					<li><a href="{{ .RelPermalink }}" >{{ .Date.Format "02/01/2006" }} - {{ .Title }}</a></li>
+				{{ end }}
+				</ul>
 			</td>
 			{{ if .Page.Params.pagemenu }}
 			<td id="content_table_right">
