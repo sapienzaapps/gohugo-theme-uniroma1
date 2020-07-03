@@ -1,33 +1,28 @@
 {{ define "main" }}
+
+{{ if isset .Site.Params "home_section_page" }}
 <div id="content">
 	<table id="content_table">
 		<tr>
-			{{ if isset .Site.Params "home_section_page" }}
-				{{ with .GetPage .Site.Params.home_section_page }}
-					<td class="leftmenu">{{- partial "left.html" . -}}</td>
-					<td class="content_cell">
-						<article>
-							<h1 class="pagetitle">{{ .Title }}</h1>
-							{{ .Content }}
-						</article>
-					</td>
-					{{ if .Page.Params.pagemenu }}
-					<td id="content_table_right">
-						{{- partial "right.html" . -}}
-					</td>
-					{{ end }}
+			{{ with .GetPage .Site.Params.home_section_page }}
+				<td class="leftmenu">{{- partial "left.html" . -}}</td>
+				<td class="content_cell">
+					<article>
+						<h1 class="pagetitle">{{ .Title }}</h1>
+						{{ .Content }}
+					</article>
+				</td>
+				{{ if .Page.Params.pagemenu }}
+				<td id="content_table_right">
+					{{- partial "right.html" . -}}
+				</td>
 				{{ end }}
-			{{ else }}
-			<td class="content_cell">
-				<article>
-					{{ range .Params.pagemenu }}
-						{{- partial "index_item.html" . -}}
-					{{ end }}
-					{{ .Content }}
-				</article>
-			</td>
 			{{ end }}
 		</tr>
 	</table>
 </div>
+{{ else }}
+	{{- partial "index_home.html" . -}}
+{{ end }}
+
 {{ end }}

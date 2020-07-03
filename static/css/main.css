@@ -81,7 +81,7 @@ nav .sectionactive {
 	background-color: var(--main-color-light);
 }
 
-#content {
+#content, #content_news, #content_footer {
 	width: 1170px;
 	margin: auto;
 	color: #333;
@@ -208,9 +208,14 @@ a:hover {
 	color: #000;
 }
 
+.homepage_image {
+	width: 50%;
+}
+
 .homepage_menu {
 	float: right;
-	margin-left: 20px;
+	padding-left: 20px;
+	width: 25%;
 }
 
 .homepage_menu h2 {
@@ -255,4 +260,95 @@ nav .breadcrumbs b {
 
 #content img {
 	max-width: 100%;
+}
+
+#content .homepage_title {
+	font-size: 18px;
+	font-weight: 300;
+}
+
+/* ********** NEWS SECTION *********** */
+
+#content_news {
+	padding-bottom: 10px;
+}
+
+#content_news_background {
+	background-color: #f1f1f1;
+	padding-top: 20px;
+}
+
+#content_news .news_item_block {
+	width: 49%;
+	float: left;
+}
+
+#content_news .news_item_block.odd {
+	width: 49%;
+	float: right;
+}
+
+#content_news .news_item_block img {
+	width: 100%;
+}
+
+#content_news .news_item_text {
+	color: #333;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: 300;
+	padding: 20px;
+	display: block;
+}
+
+#content_news .news_read_more {
+	background-color: var(--main-color);
+	color: #fff;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: 300;
+	padding: 10px 20px;
+	display: block;
+	float: right;
+}
+
+/* ***** FOOTER ***** */
+
+#content_footer {
+	white-space: nowrap;
+	text-align: center;
+}
+
+#content_footer a {
+	margin: 0px 1%;
+	padding-left: 5px;
+	padding-right: 5px;
+	width: 23%;
+	text-align: center;
+	padding-bottom: 10px;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: white;
+	display: inline-block;
+	box-sizing: border-box;
+}
+
+#content_footer img {
+	width: auto;
+	height: 230px;
+	margin: 0 auto !important;
+	padding: 13% 0;
+	max-width: 100%;
+}
+
+.bg-orange {
+	background-color: #c54c00;
+}
+
+.bg-gray {
+	background-color: #aaa38e;
+}
+
+.bg-red {
+	background-color: #822433;
 }

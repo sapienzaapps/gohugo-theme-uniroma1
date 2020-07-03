@@ -1,0 +1,41 @@
+
+{{ if .Page.Params.highlights }}
+<div class="homepage_menu">
+	<h2>In evidenza</h2>
+	<ul>
+	{{ range .Page.Params.highlights }}
+		<li>
+			<a href="{{ .link }}" title="{{ .name }}">
+				{{- .name -}}
+			</a>
+		</li>
+	{{ end }}
+	</ul>
+</div>
+{{ end }}
+
+{{ if .Page.Params.services }}
+<div class="homepage_menu">
+	<h2>Servizi</h2>
+	<ul>
+	{{ range .Page.Params.services }}
+		<li>
+			<a href="{{ .link }}" title="{{ .name }}">
+				{{- .name -}}
+			</a>
+		</li>
+	{{ end }}
+	</ul>
+</div>
+{{ end }}
+
+<img class="homepage_image" src="{{ .Page.Params.main_photo }}" />
+
+<div class="homepage_title">{{ .Page.Params.welcome }}</div>
+
+{{ if ne .Content "" }}
+<div style="padding: 20px; clear: both;"></div>
+{{ .Content }}
+{{ else }}
+<div style="clear: both;"></div>
+{{ end }}

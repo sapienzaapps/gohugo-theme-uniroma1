@@ -1,0 +1,58 @@
+<div id="content">
+	<table id="content_table">
+		<tr>
+            <td class="content_cell_home">
+                {{- partial "home.html" . -}}
+            </td>
+		</tr>
+	</table>
+</div>
+
+
+{{ if .GetPage "/avvisi" }}
+<div id="content_news_background">
+    <div id="content_news">
+        {{ range $i, $p := (.GetPage "/avvisi").Pages }}
+        
+        <div class="news_item_block {{ if not (modBool $i 2) }}odd{{ end }}">
+            <div style="background-color: white; ">
+                <a href="{{ $p.RelPermalink }}" title="{{ $p.Title }}">
+                    {{ if $p.Page.Params.homepage_image }}
+                    <img src="{{ $p.Page.Params.homepage_image }}" />
+                    {{ else }}
+                    <img src="/images/news.png" />
+                    {{ end }}
+                    <span class="news_item_text">
+                        {{- $p.Title -}}
+                    </span>
+                </a>
+            </div>
+        </div>
+        {{ end }}
+        <div style="padding:10px; clear: both;"></div>
+        <a href="/avvisi/" class="news_read_more">
+            ALL NEWS
+        </a>
+        <div style="clear: both;"></div>
+    </div>
+</div>
+{{ end }}
+
+<div id="content_footer">
+	<a href="https://www.uniroma1.it/it/pagina/ciao-informazioni-gli-studenti" target="_blank" class="bg-orange">
+        <img src="/images/ciao.png" /><br />
+        CIAO<br />Informazioni per gli studenti
+    </a>
+	<a href="https://opengov.uniroma1.it/" target="_blank" class="bg-gray">
+        <img src="/images/opengov.png" /><br /><br />
+        Sapienza OpenGov
+    </a>
+	<a href="https://merchandising.uniroma1.it/" target="_blank" class="bg-red">
+        <img src="/images/merchandising.png" /><br /><br />
+        Sapienza Store
+    </a>
+	<a href="http://virtualtour.uniroma1.it/" target="_blank" class="bg-red">
+        <img src="/images/virtual_tour.png" /><br /><br />
+        Virtual tour
+    </a>
+</div>
