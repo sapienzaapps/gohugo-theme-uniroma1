@@ -1,14 +1,10 @@
 {{ $currentPage := . }}
 
-{{ range .Site.Menus.main }}
-	{{ if and (ne .Page nil) (eq .Page.Section $currentPage.Section) }}
+{{ with .FirstSection }}
+	<h2 onclick="location.href='{{ .URL }}'" style="cursor: pointer;">{{ .Page.Name }}</h2>
+	<ul>
 		{{ .Page.Scratch.Set "currentPage" $currentPage }}
 		{{ .Page.Scratch.Set "nested" 0 }}
-
-		<h2 onclick="location.href='{{ .URL }}'" style="cursor: pointer;">{{ .Page.Name }}</h2>
-		<ul>
-			{{ partial "left_item.html" . }}
-		</ul>
-
-	{{ end }}
+		{{ partial "left_item.html" . }}
+	</ul>
 {{ end }}
