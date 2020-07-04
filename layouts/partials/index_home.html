@@ -15,7 +15,7 @@
         {{ range $i, $p := (.GetPage "/avvisi").Pages }}
         
         <div class="news_item_block {{ if not (modBool $i 2) }}odd{{ end }}">
-            <div style="background-color: white; ">
+            <div>
                 <a href="{{ $p.RelPermalink }}" title="{{ $p.Title }}">
                     {{ if $p.Page.Params.homepage_image }}
                     <img src="{{ $p.Page.Params.homepage_image }}" />

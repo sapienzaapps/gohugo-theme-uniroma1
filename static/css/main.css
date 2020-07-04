@@ -19,6 +19,10 @@ body {
 	position: relative;
 }
 
+#logosapienzadark {
+	display: none;
+}
+
 header {
 	width: 1170px;
 	padding: 0 10px;
@@ -286,6 +290,10 @@ nav .breadcrumbs b {
 #content_news .news_item_block {
 	width: 49%;
 	float: left;
+}
+
+#content_news .news_item_block div {
+	background-color: white;
 }
 
 #content_news .news_item_block.odd {

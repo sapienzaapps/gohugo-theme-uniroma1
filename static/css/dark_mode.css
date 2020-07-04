@@ -1,0 +1,65 @@
+@media (prefers-color-scheme: light) {
+    html, nav .hamburgerlb {
+        background-color: #151E27;
+    }
+
+    nav a, nav a:link, nav a:active, nav a:visited {
+        color: #ddd;
+    }
+
+    #content_news_background {
+        background-color: #1f1f1f;
+    }
+
+    #content, #content_news .news_item_text, #content_table td.leftmenu ul li a, .homepage_menu ul li a, nav .breadcrumbs a, nav .breadcrumbs a:link, nav .breadcrumbs a:visited, nav .breadcrumbs a:active, nav .breadcrumbs a:hover {
+        color: #ddd;
+    }
+
+    #content_table td.leftmenu ul li:hover, .homepage_menu ul li:hover, #content_table td.leftmenu .menuactive {
+        background-color: #333;
+    }
+
+    #content_news .news_item_block div {
+        background-color: black;
+        color: #ddd;
+    }
+
+    nav .breadcrumbs b {
+        color: #AA4444;
+    }
+
+    img {
+        opacity: .75;
+        transition: opacity .5s ease-in-out;
+    }
+
+    img:hover {
+        opacity: 1;
+    }
+
+    a, a:visited, a:link, a:active {
+        color: lightblue;
+    }
+
+    input {
+        background-color: transparent;
+        color: #ddd;
+    }
+
+    #searchbox span {
+        border: 1px #ddd solid;
+    }
+
+    header a, header a:hover, header a:link, header a:active, header a:visited {
+        color: #ddd;
+    }
+
+    #logosapienza {
+        display: none;
+    }
+
+    #logosapienzadark {
+        display: initial;
+        opacity: 1;
+    }
+}

@@ -13,7 +13,7 @@
 		display: block;
 	}
 
-	#logosapienza {
+	#logosapienza, #logosapienzadark {
 		margin: 0;
 	}
 
@@ -46,7 +46,7 @@
 	/* HAMBURGER MENU */
 	nav .hamburgerlb {
 		display: inline-block;
-		color: #822433;
+		color: var(--main-color);
 		background-color: #fff;
 		font-style: normal;
 		font-size: 1.2em;
