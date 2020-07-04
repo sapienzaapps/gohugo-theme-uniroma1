@@ -325,6 +325,10 @@ nav .breadcrumbs b {
 	float: right;
 }
 
+.news_read_more {
+	text-transform: uppercase;
+}
+
 /* ***** FOOTER ***** */
 
 #content_footer {
@@ -366,7 +370,7 @@ nav .breadcrumbs b {
 	background-color: #822433;
 }
 
-/* ***** SEARCH BOX ***** */
+/* ***** SEARCH BOX AND TRANSLATIONS ***** */
 #searchbox {
 	text-align: right;
 	margin: auto;
@@ -390,4 +394,13 @@ nav .breadcrumbs b {
 	border: 0;
 	padding: 5px;
 	margin: 0;
+}
+
+#searchbox ul, #searchbox form {
+	display: inline;
+}
+
+#searchbox ul li {
+	display: inline;
+	padding: 0 5px;
 }

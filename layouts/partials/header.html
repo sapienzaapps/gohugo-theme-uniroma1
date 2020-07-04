@@ -1,38 +1,52 @@
-{{ if .Site.Params.search_enabled }}
+{{ if or .Site.Params.search_enabled (gt (len $.Site.Home.AllTranslations) 1) }}
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
 {{- $partialBaseUrl := strings.TrimPrefix "http://" (strings.TrimPrefix "https://" .Site.BaseURL) -}}
 {{- $cleanBaseUrl := index (split $partialBaseUrl "/") 0 -}}
 <div id="searchbox">
-	{{ if eq .Site.Params.search_provider "duckduckgo" }}
-	<script>
-		// Unfortunately DDG does not provide a "sitesearch" parameter for the
-		// filter, it should be provided in the "q" aparam
-		function searchWithDDG() {
-			var q = document.getElementById('q').value;
-			location.href = 'https://www.duckduckgo.com/?q=' + encodeURIComponent(q + " site:{{ $cleanBaseUrl }}");
-			return false;
-		}
-	</script>
-	<form action="https://www.duckduckgo.com" method="GET">
-		<span>
-			<input type="text" size="15" maxlength="128" placeholder="Ricerca" name="q" id="q" />
-			<button type="submit" onclick="return searchWithDDG();">&#128270;</button>
-		</span>
-	</form>
-	{{ else }}
-	<form action="https://www.google.it/search" method="GET">
-		<input type="hidden" name="sitesearch" value="{{ $cleanBaseUrl }}" />
-		<span>
-			<input type="text" size="15" maxlength="128" placeholder="Ricerca" name="q" />
-			<button type="submit">&#128270;</button>
-		</span>
-	</form>
+	{{ if .Site.Params.search_enabled }}
+		{{ if eq .Site.Params.search_provider "duckduckgo" }}
+		<script>
+			// Unfortunately DDG does not provide a "sitesearch" parameter for the
+			// filter, it should be provided in the "q" aparam
+			function searchWithDDG() {
+				var q = document.getElementById('q').value;
+				location.href = 'https://www.duckduckgo.com/?q=' + encodeURIComponent(q + " site:{{ $cleanBaseUrl }}");
+				return false;
+			}
+		</script>
+		<form action="https://www.duckduckgo.com" method="GET">
+			<span>
+				<input type="text" size="15" maxlength="128" placeholder="{{ $data.strings.search }}" name="q" id="q" />
+				<button type="submit" onclick="return searchWithDDG();">&#128270;</button>
+			</span>
+		</form>
+		{{ else }}
+		<form action="https://www.google.it/search" method="GET">
+			<input type="hidden" name="sitesearch" value="{{ $cleanBaseUrl }}" />
+			<span>
+				<input type="text" size="15" maxlength="128" placeholder="{{ $data.strings.search }}" name="q" />
+				<button type="submit">&#128270;</button>
+			</span>
+		</form>
+		{{ end }}
+	{{ end }}
+
+	{{ if gt (len $.Site.Home.AllTranslations) 1 }}
+		<ul>
+		{{ range $.Site.Home.AllTranslations }}
+			{{ if ne $.Page.Language .Language }}
+				<li><a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
+			{{ end }}
+		{{ end }}
+		</ul>
 	{{ end }}
 </div>
 {{ end }}
 <header>
 	<img src="/images/logo_sapienza.png" alt="Logo Sapienza" id="logosapienza" />
 	<img src="/images/logo_sapienza_dark.png" alt="Logo Sapienza" id="logosapienzadark" />
-	<a href="/">{{ .Site.Title }}</a>
+	<a href="{{ "/" | relLangURL }}">{{ .Site.Title }}</a>
 
 	{{ if isset .Site.Params "logo2" }}
 	<img src="{{ .Site.Params.logo2 }}" alt="{{ .Site.Title }}" id="sitelogo" />

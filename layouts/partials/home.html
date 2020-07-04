@@ -1,3 +1,4 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
 
 <div class="homepage_image">
 	<img src="{{ .Page.Params.main_photo }}" />
@@ -6,7 +7,7 @@
 
 {{ if .Page.Params.services }}
 <div class="homepage_menu">
-	<h2>Servizi</h2>
+	<h2>{{ $data.strings.services }}</h2>
 	<ul>
 	{{ range .Page.Params.services }}
 		<li>
@@ -21,7 +22,7 @@
 
 {{ if .Page.Params.highlights }}
 <div class="homepage_menu">
-	<h2>In evidenza</h2>
+	<h2>{{ $data.strings.highlights }}</h2>
 	<ul>
 	{{ range .Page.Params.highlights }}
 		<li>

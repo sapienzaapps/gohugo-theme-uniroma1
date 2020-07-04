@@ -13,12 +13,12 @@
 			{{ $isCurrentSection = true }}
 		{{ end }}
 
-		{{ if and (eq .Page.File.Path $indexPage.File.Path) (eq $currentPage.Section "") }}
+		{{ if and (eq .Page $indexPage) (eq $currentPage.Section "") }}
 			{{ $isCurrentSection = true }}
 		{{ end }}
 
 		<li class="{{ if $isCurrentSection }}sectionactive{{ end }}">
-			<a href="{{ .RelPermalink }}" title="{{ .Title }}">
+			<a href="{{ if eq $indexPage .Page }}{{ "/" | relLangURL }}{{ else }}{{ .RelPermalink }}{{ end }}" title="{{ .Title }}">
 				{{- .Name -}}
 			</a>
 		</li>

@@ -1,3 +1,5 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
 <div id="content">
 	<table id="content_table">
 		<tr>
@@ -13,7 +15,6 @@
 <div id="content_news_background">
     <div id="content_news">
         {{ range $i, $p := (.GetPage "/avvisi").Pages }}
-        
         <div class="news_item_block {{ if not (modBool $i 2) }}odd{{ end }}">
             <div>
                 <a href="{{ $p.RelPermalink }}" title="{{ $p.Title }}">
@@ -30,8 +31,8 @@
         </div>
         {{ end }}
         <div style="padding:10px; clear: both;"></div>
-        <a href="/avvisi/" class="news_read_more">
-            ALL NEWS
+        <a href="{{ "/avvisi/" | relLangURL }}" class="news_read_more">
+            {{ $data.strings.allnews }}
         </a>
         <div style="clear: both;"></div>
     </div>

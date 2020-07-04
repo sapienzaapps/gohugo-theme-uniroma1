@@ -18,3 +18,8 @@
 {{ if .Site.Params.dark_mode_enabled }}
 <link type="text/css" rel="stylesheet" href="/css/dark_mode.css" />
 {{ end }}
+{{ if .IsTranslated }}
+	{{ range .Translations }}
+	<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}">
+	{{ end }}
+{{ end }}
