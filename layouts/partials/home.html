@@ -1,4 +1,9 @@
 
+<div class="homepage_image">
+	<img src="{{ .Page.Params.main_photo }}" />
+	<div class="homepage_title">{{ .Page.Params.welcome }}</div>
+</div>
+
 {{ if .Page.Params.services }}
 <div class="homepage_menu">
 	<h2>Servizi</h2>
@@ -28,10 +33,6 @@
 	</ul>
 </div>
 {{ end }}
-
-<img class="homepage_image" src="{{ .Page.Params.main_photo }}" />
-
-<div class="homepage_title">{{ .Page.Params.welcome }}</div>
 
 {{ if ne .Content "" }}
 <div style="padding: 20px; clear: both;"></div>

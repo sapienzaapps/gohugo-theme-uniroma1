@@ -81,7 +81,7 @@ nav .sectionactive {
 	background-color: var(--main-color-light);
 }
 
-#content, #content_news, #content_footer {
+#content, #content_news, #content_footer, #searchbox {
 	width: 1170px;
 	margin: auto;
 	color: #333;
@@ -210,6 +210,11 @@ a:hover {
 
 .homepage_image {
 	width: 50%;
+	float: left;
+}
+
+.homepage_image img {
+	width: 100%;
 }
 
 .homepage_menu {
@@ -351,4 +356,30 @@ nav .breadcrumbs b {
 
 .bg-red {
 	background-color: #822433;
+}
+
+/* ***** SEARCH BOX ***** */
+#searchbox {
+	text-align: right;
+	margin: auto;
+	color: #333;
+
+	padding: 0;
+	padding-top: 10px;
+}
+
+#searchbox span {
+	border: 1px black solid;
+	padding: 2px;
+}
+
+#searchbox input {
+	border: 0;
+}
+
+#searchbox button {
+	background-color: transparent;
+	border: 0;
+	padding: 5px;
+	margin: 0;
 }

@@ -1,5 +1,5 @@
 @media screen and (max-width: 1170px) {
-	#content, header, nav, #footer, #footer_content {
+	#content, header, nav, #footer, #footer_content, #content_news, #content_footer, #searchbox {
 		width: 100%;
 	}
 
@@ -30,10 +30,6 @@
 	#content_table_right {
 		float: left;
 		width: 100%;
-	}
-
-	#content .homepage_menu {
-		display: none;
 	}
 
 	#sitelogo {
@@ -72,4 +68,36 @@
 	#hamburger {
 		display: none;
 	}
+
+	#searchbox {
+		display: none;
+	}
+
+	/* ***** INDEX ***** */
+	.homepage_image {
+		width: 100%;
+	}
+
+	.homepage_menu {
+		width: 100%;
+		padding: 5px;
+	}
+
+	/* ***** NEWS ***** */
+	#content_news .news_item_block {
+		width: 100%;
+	}
+
+	/* ***** FOOTER ***** */
+	#content_footer img {
+		display: none;
+	}
+
+	#content_footer a {
+		display: block;
+		width: 100%;
+		margin: 0;
+		margin-top: 10px;
+	}
+
 }
