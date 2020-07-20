@@ -44,11 +44,16 @@
 </div>
 {{ end }}
 <header>
-	<img src="/images/logo_sapienza.png" alt="Logo Sapienza" id="logosapienza" />
+	<img src="/images/logo_sapienza.png" alt="Logo Sapienza" id="logosapienza"
+	{{ if eq $.Site.Params.sapienza_logo_link "uniroma1" }}
+	onclick="location.href = 'https://www.uniroma1.it/'" style="cursor: pointer;"
+	{{ else if eq $.Site.Params.sapienza_logo_link "root" }}
+	onclick="location.href = '{{ "/" | relLangURL }}'" style="cursor: pointer;"
+	{{ else }}{{ end }} />
 	<img src="/images/logo_sapienza_dark.png" alt="Logo Sapienza" id="logosapienzadark" />
 	<a href="{{ "/" | relLangURL }}">{{ .Site.Title }}</a>
 
 	{{ if isset .Site.Params "logo2" }}
-	<img src="{{ .Site.Params.logo2 }}" alt="{{ .Site.Title }}" id="sitelogo" />
+	<img src="{{ .Site.Params.logo2 }}" alt="{{ .Site.Title }}" id="sitelogo" onclick="location.href = '{{ "/" | relLangURL }}'" style="cursor: pointer;" />
 	{{ end }}
 </header>
